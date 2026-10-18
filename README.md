@@ -9,3 +9,7 @@
 
 참고한 척도: 김주환(2011) KRQ-53, Reivich & Shatté RQ/RFI, Connor-Davidson CD-RISC, Smith et al.(2008) BRS.
 문항은 해당 척도의 구성요인을 참고해 새로 작성했으며, 표준화된 심리검사가 아닙니다.
+
+## 배포
+
+`main` 브랜치에 푸시하면 Vercel이 자동으로 프로덕션 배포합니다 → https://resilience-test-phi.vercel.app
