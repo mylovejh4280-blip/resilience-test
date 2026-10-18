@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>회복탄력성 자가진단</title>
+  <meta name="description" content="20문항으로 알아보는 나의 회복탄력성 — 감정조절, 끈기, 문제해결, 관계, 긍정성" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <!-- 시작 화면 -->
+    <section id="intro" class="card">
+      <p class="eyebrow">Resilience Self-Check · 20문항</p>
+      <h1>나의 회복탄력성은<br />얼마나 단단할까?</h1>
+      <p class="lead">
+        회복탄력성은 역경이나 스트레스를 겪은 뒤 다시 일어서는 마음의 힘입니다.
+        감정조절 · 끈기 · 문제해결 · 관계 · 긍정성, 다섯 영역을 4문항씩 살펴봅니다.
+      </p>
+      <form id="profile" class="profile">
+        <label>닉네임 <span class="opt">(선택)</span>
+          <input name="nickname" maxlength="40" placeholder="예: 단단한마음" />
+        </label>
+        <div class="row">
+          <label>연령대
+            <select name="age_group">
+              <option value="">선택 안 함</option>
+              <option>10대</option><option>20대</option><option>30대</option>
+              <option>40대</option><option>50대</option><option>60대 이상</option>
+            </select>
+          </label>
+          <label>성별
+            <select name="gender">
+              <option value="">선택 안 함</option>
+              <option>여성</option><option>남성</option><option>기타/응답안함</option>
+            </select>
+          </label>
+        </div>
+        <label class="consent">
+          <input type="checkbox" name="consent" required />
+          응답 내용이 익명 통계 목적으로 저장되는 것에 동의합니다.
+        </label>
+        <button class="btn primary" type="submit">진단 시작하기</button>
+      </form>
+      <p class="fine">소요시간 약 3분 · 최근 1주일 동안의 나를 떠올리며 응답해 주세요.</p>
+    </section>
+
+    <!-- 문항 화면 -->
+    <section id="quiz" class="card" hidden>
+      <div class="progress"><div id="bar"></div></div>
+      <p class="count"><span id="qnum">1</span> / 20</p>
+      <p id="qfactor" class="eyebrow"></p>
+      <h2 id="qtext"></h2>
+      <div id="choices" class="choices" role="radiogroup"></div>
+      <div class="nav">
+        <button id="prev" class="btn ghost" type="button">이전</button>
+      </div>
+    </section>
+
+    <!-- 결과 화면 -->
+    <section id="result" class="card" hidden>
+      <p class="eyebrow">진단 결과</p>
+      <h1 id="rtitle"></h1>
+      <div class="score">
+        <span id="rtotal" class="big"></span><span class="of">/ 100</span>
+        <span id="rlevel" class="badge"></span>
+      </div>
+      <p id="rdesc" class="lead"></p>
+      <div id="factors" class="factors"></div>
+      <div id="tips" class="tips"></div>
+      <p id="stats" class="fine"></p>
+      <p id="saveStatus" class="fine"></p>
+      <button id="restart" class="btn ghost" type="button">다시 하기</button>
+      <p class="fine disclaimer">
+        이 진단은 김주환(2011) KRQ-53, Reivich &amp; Shatté의 RQ, CD-RISC, BRS 등의 구성요인을 참고해
+        새로 작성한 자기점검용 도구이며, 표준화된 심리검사나 의학적 진단을 대신하지 않습니다.
+      </p>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
